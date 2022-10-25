@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #f0f7ff">
+  <v-app style="background-color: #f0f8ff">
     <v-main>
       <router-view />
     </v-main>
@@ -18,12 +18,14 @@ export default Vue.extend({
 });
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .v-btn__content,
+#input-9,
+#input-13,
 h1,
 h2,
 p,
 .v-label {
-font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 </style>
