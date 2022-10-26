@@ -25,7 +25,11 @@ export default Vue.extend({
 h1,
 h2,
 p,
-.v-label {
+.v-label,
+span,
+td,
+div {
   font-family: "Montserrat", sans-serif;
 }
+
 </style>

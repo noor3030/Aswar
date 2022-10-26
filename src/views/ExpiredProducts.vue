@@ -1,21 +1,11 @@
 <template>
   <div class="pa-16">
     <v-row class="pa-5 mb-2" justify="space-between">
-      <h2 style="color: #616161">Products Table</h2>
-      <v-btn color="#0075a9" class="rounded-xl" large>
-        <span
-          style="
-            color: #fff;
-            font-size: 20px;
-            text-transform: none;
-            font-weight: bold;
-          "
-          >Add New Product</span
-        >
-      </v-btn>
-      <v-btn class="rounded-xl" large text to="/expired-products">
+      <h2 style="color: #616161">Expired Products Table</h2>
+
+      <v-btn class="rounded-xl" large text to="/products">
         <h2 style="color: #616161; font-size: 20px; text-transform: none">
-          Expired Products Table
+          products Table
         </h2>
       </v-btn>
     </v-row>
@@ -36,7 +26,6 @@
         <p>{{ formatDate(item.expiration_date) }}</p>
       </template>
     </v-data-table>
-    
   </div>
 </template>
 <script lang="ts">
