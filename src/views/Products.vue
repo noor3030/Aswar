@@ -2,7 +2,7 @@
   <div class="pa-16">
     <v-row class="pa-5 mb-2" justify="space-between">
       <h2 style="color: #616161">Products Table</h2>
-      <v-btn color="#0075a9" class="rounded-xl" large>
+      <v-btn color="#0075a9" class="rounded-xl" large @click="dialog = true">
         <span
           style="
             color: #fff;
@@ -12,6 +12,7 @@
           "
           >Add New Product</span
         >
+        <v-icon color="#fff">mdi-plus</v-icon>
       </v-btn>
       <v-btn class="rounded-xl" large text to="/expired-products">
         <h2 style="color: #616161; font-size: 20px; text-transform: none">
@@ -36,17 +37,18 @@
         <p>{{ formatDate(item.expiration_date) }}</p>
       </template>
     </v-data-table>
-    
+    <ProductCreateView :show="dialog" @close="dialog = false" />
   </div>
 </template>
 <script lang="ts">
 import { formatDate } from "../utils/date-filter";
-
+import ProductCreateView from "../components/ProductCreateView.vue";
 import { Product, ProductService } from "@/client";
 import Vue from "vue";
 interface ProductsData {
   headers: Array<{ text: string; value: string; align: string }>;
   products: Array<Product>;
+  dialog: boolean;
 }
 export default Vue.extend({
   name: "App",
@@ -59,6 +61,7 @@ export default Vue.extend({
       { text: "Picture", value: "image_url", align: "center" },
     ],
     products: [],
+    dialog: false,
   }),
   created() {
     ProductService.readProductGet().then((value) => {
@@ -67,6 +70,9 @@ export default Vue.extend({
   },
   methods: {
     formatDate,
+  },
+  components: {
+    ProductCreateView,
   },
 });
 </script>

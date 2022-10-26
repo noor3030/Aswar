@@ -90,7 +90,7 @@ export default Vue.extend({
 });
 </script>
 <style>
-.v-icon {
+.v-text-field .v-icon {
   color: #0075a9 !important;
 }
 #input-9,
