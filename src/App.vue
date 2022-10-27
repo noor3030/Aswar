@@ -28,7 +28,8 @@ p,
 .v-label,
 span,
 td,
-div {
+div,
+h3 {
   font-family: "Montserrat", sans-serif;
 }
 

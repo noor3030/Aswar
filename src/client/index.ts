@@ -6,6 +6,7 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
+export type { Body_create_product_products_post } from './models/Body_create_product_products_post';
 export type { HTTPValidationError } from './models/HTTPValidationError';
 export type { Pagination } from './models/Pagination';
 export type { Product } from './models/Product';

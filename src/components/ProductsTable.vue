@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-16">
+  <div :style="$vuetify.breakpoint.mdAndDown ? 'padding: 10px;' : 'padding: 30px;'">
     <v-row class="pa-5 mb-2" justify="space-between">
       <h2 style="color: #616161">
         {{ isExpired ? "Expired items list" : "Items list" }}

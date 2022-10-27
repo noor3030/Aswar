@@ -2,10 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type Product = {
-    name: string;
-    id?: number;
+export type Body_create_product_products_post = {
+    image: Blob;
+    name?: string;
     creation_date: string;
     expiration_date: string;
-    image_url: string;
 };
