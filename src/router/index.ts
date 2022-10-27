@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Login from "../views/Login.vue";
-import Products from "@/views/Products.vue";
-import ExpiredProducts from "@/views/ExpiredProducts.vue";
+import Login from "../views/LoginView.vue";
+import Products from "@/views/ProductsView.vue";
+import ExpiredProducts from "@/views/ExpiredProductsView.vue";
 
 Vue.use(VueRouter);
 
