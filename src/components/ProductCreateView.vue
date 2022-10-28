@@ -86,11 +86,11 @@ export default Vue.extend({
     closeDialog() {
       this.$emit("close");
     },
-    createProduct() {
+    async createProduct() {
       const creation_date = new Date(this.creation_date).toISOString();
       const expiration_date = new Date(this.expiration_date).toISOString();
 
-      ProductService.createProductProductsPost({
+      await ProductService.createProductProductsPost({
         creation_date: creation_date,
         expiration_date: expiration_date,
         name: this.name,
