@@ -108,6 +108,7 @@ export default Vue.extend({
     };
   },
   methods: {
+    
     login() {
       DefaultService.loginAuthLoginPost({
         username: this.user.email,
