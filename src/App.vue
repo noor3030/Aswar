@@ -3,18 +3,22 @@
     <v-main>
       <router-view />
     </v-main>
+    <Logout v-if="hide"/>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-
+import Logout from "@/components/Logout.vue"
 export default Vue.extend({
   name: "App",
+  components:{Logout},
 
-  data: () => ({
-    //
-  }),
+computed: {
+    hide() {
+      return this.$route.path !== "/"
+    }}
+  
 });
 </script>
 <style>

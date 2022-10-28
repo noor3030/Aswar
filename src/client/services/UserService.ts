@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { User } from '../models/User';
+import type { models__User } from '../models/models__User';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -12,12 +12,12 @@ export class UserService {
     /**
      * Read User
      * @param id 
-     * @returns User Successful Response
+     * @returns models__User Successful Response
      * @throws ApiError
      */
     public static readUserUsersIdGet(
 id: string,
-): CancelablePromise<User> {
+): CancelablePromise<models__User> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/users/{id}',

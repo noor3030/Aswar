@@ -1,9 +1,11 @@
 <template>
-  <div :style="$vuetify.breakpoint.mdAndDown ? 'padding: 10px;' : 'padding: 30px;'">
+  <div
+    :style="$vuetify.breakpoint.mdAndDown ? 'padding: 10px;' : 'padding: 30px;'"
+  >
     <v-row class="pa-5 mb-2" justify="space-between">
-      <h2 style="color: #616161">
+      <h1 style="color: #616161">
         {{ isExpired ? "Expired items list" : "Items list" }}
-      </h2>
+      </h1>
       <v-btn
         color="#0075a9"
         class="rounded-xl"
@@ -28,9 +30,15 @@
         text
         :to="isExpired ? '/products' : '/expired-products'"
       >
+        <v-icon color="#616161" v-if="isExpired == true">
+          mdi-arrow-left-thick</v-icon
+        >
         <h2 style="color: #616161; font-size: 20px; text-transform: none">
-          {{ isExpired ? "Items list" : "Expired items list" }}
+          {{ isExpired ? " Items list " : "Expired items list" }}
         </h2>
+        <v-icon color="#616161" v-if="isExpired == false">
+          mdi-arrow-right-thick
+        </v-icon>
       </v-btn>
     </v-row>
 
@@ -56,7 +64,7 @@
         <p>{{ formatDate(item.expiration_date) }}</p>
       </template>
     </v-data-table>
-    <ProductCreateView :show="dialog" @close="dialog = false" />
+    <ProductCreateView :show="dialog" @close="dialog = false" @getProducts="getProducts"/>
     <div class="text-center pt-2">
       <v-pagination
         @input="optionsChangeHandler"
@@ -156,12 +164,11 @@ span {
 }
 p {
   font-size: 15px;
-  
 }
 .v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
 .v-data-table > .v-data-table__wrapper > table > thead > tr > td,
 .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td,
-.v-application--is-ltr  {
+.v-application--is-ltr {
   font-size: 17px;
   color: #616161;
   font-weight: bold;

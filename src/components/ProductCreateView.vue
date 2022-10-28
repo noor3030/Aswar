@@ -29,8 +29,7 @@
             ></v-text-field>
           </v-col>
           <v-col>
-            
-             <v-file-input
+            <v-file-input
               placeholder="Picture"
               outlined
               single-line
@@ -43,7 +42,7 @@
         <v-row align="center" justify="center">
           <v-col>
             <h3>Creation Date</h3>
-           <v-date-picker v-model="creation_date"></v-date-picker>
+            <v-date-picker v-model="creation_date"></v-date-picker>
           </v-col>
           <v-col>
             <h3>Expiration Date</h3>
@@ -97,7 +96,8 @@ export default Vue.extend({
         name: this.name,
         image: this.image,
       });
-     this.closeDialog()
+      this.closeDialog();
+      this.$emit("getProducts");
     },
   },
 });

@@ -4,10 +4,9 @@
 
 import type { Role } from './Role';
 
-export type User = {
-    id?: number;
+export type schemas__User = {
+    id: number;
     name: string;
     email: string;
-    hash_password: string;
     role: Role;
 };
